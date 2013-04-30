@@ -12,10 +12,6 @@ class Base62
         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
     );
 
-    public function __construct()
-    {
-    }
-
     public function encode($value = null)
     {
         if (is_null($value)) {
