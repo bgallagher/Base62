@@ -12,12 +12,8 @@ class Base62
         'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
     );
 
-    public function encode($value = null)
+    public function encode($value)
     {
-        if (is_null($value)) {
-            throw new \InvalidArgumentException('Value must be setted');
-        }
-
         $base62 = '';
         do {
             $base62 = $this->values[$value % 62] . $base62;
@@ -27,12 +23,8 @@ class Base62
         return $base62;
     }
 
-    public function decode($value = null)
+    public function decode($value)
     {
-        if (is_null($value)) {
-            throw new \InvalidArgumentException('Value must be setted');
-        }
-
         $base10 = 0;
         $length = strlen($value);
 
